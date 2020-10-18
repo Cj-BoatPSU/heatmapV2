@@ -336,7 +336,7 @@
                 var me = this,
                     rout, rin;
 
-                me.set("radius", config["radius"] || 40); //set radius default
+                me.set("radius", config["radius"] || 40);
                 me.set("element", (config.element instanceof Object)?config.element:document.getElementById(config.element));
                 me.set("visible", (config.visible != null)?config.visible:true);
                 me.set("max", config.max || false);
@@ -553,8 +553,8 @@
                     ctx = me.get("actx"),
                     max = me.get("max"),
                     bounds = me.get("bounds"),
-                    xb = x - (1.5 * radius) >> 0, yb = y - (2.5 * radius) >> 0, //increse forecast around
-                    xc = x + (1.5 * radius) >> 0, yc = y + (2.5 * radius) >> 0;
+                    xb = x - (1.5 * radius) >> 0, yb = y - (1.5 * radius) >> 0,
+                    xc = x + (1.5 * radius) >> 0, yc = y + (1.5 * radius) >> 0;
 
                 ctx.shadowColor = ('rgba(0,0,0,'+((count)?(count/me.store.max):'0.1')+')');
 
@@ -563,7 +563,7 @@
                 ctx.shadowBlur = 15; 
 
                 ctx.beginPath();
-                ctx.arc(x - 15000, y - 15000, radius, 0, Math.PI * 6, true);
+                ctx.arc(x - 15000, y - 15000, radius, 0, Math.PI * 2, true);
                 ctx.closePath();
                 ctx.fill();
                 if(colorize){
