@@ -38,7 +38,8 @@
 	</head>
 	<body>
 		<div id="main">
-                    <h1>Testing heatmap.js performance for improving its rendering process</h1>
+					<h1>Testing heatmap.js performance for improving its rendering process</h1>
+					
 		    <div id="heatmapArea">
 			
 		    </div>
@@ -51,13 +52,16 @@
 	
 		window.onload = function(){
                     
-                    var data = window.data["10dp"],
+				  //  var data = window.data["10dp"],
+				  	var data = {"max":24, "data":[
+           				 //leck 1 //sensor1
+           				 {"x":250,"y":95,"count":24}, {"x":270,"y":95,"count":24}, {"x":250,"y":110,"count":24}, ]},
                         start = +new Date,
                         heatmapInstance;
                         
                     heatmapInstance = h337.create({
                         "element":document.getElementById("heatmapArea"), 
-                        //"radius":25,
+                        "radius":20,
                         "visible":true,
                         "legend": {
                             "title": "Mouse Events",
